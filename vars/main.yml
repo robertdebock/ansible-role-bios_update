@@ -1,0 +1,16 @@
+---
+# vars file for bios_update
+_bios_update_requirements:
+  default:
+    - geteltorito
+
+bios_update_requirements: "{{ _bios_update_requirements[ansible_distribution ~ '-' ~ ansible_distribution_major_version] | default(_bios_update_requirements[ansible_distribution] | default(_bios_update_requirements['default'])) }}"
+
+# A mapping from computer model type to "bootable cd".
+_bios_update_url:
+  default: UNKNOWN
+  ThinkPad X240: "https://download.lenovo.com/pccbbs/mobiles/giuj32us.iso"
+  ThinkPad X260: "https://download.lenovo.com/pccbbs/mobiles/r02uj70d.iso"
+  ThinkPad X270: "https://download.lenovo.com/pccbbs/mobiles/r0iuj27wd.iso"
+
+bios_update_url: "{{ _bios_update_url[ansible_product_version] | default(_bios_update_url['default']) }}"

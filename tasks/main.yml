@@ -1,0 +1,61 @@
+---
+# tasks file for bios_update
+- name: install requirements
+  package:
+    name: "{{ bios_update_requirements }}"
+    state: present
+  register: bios_update_install_requirements
+  until: bios_update_install_requirements is succeeded
+  retries: 3
+
+- name: download bios update bootable cd
+  block:
+    - name: get bios_update
+      get_url:
+        url: "{{ bios_update_url }}"
+        dest: "{{ bios_update_temporary_directory }}/{{ bios_update_url | basename }}"
+      when:
+        - bios_update_url != "UNKNOWN"
+  rescue:
+    - name: show error
+      debug:
+        msg:
+          - "The model '{{ ansible_product_version }}' is unknown."
+          - "Please set bios_update_url to proceed."
+
+    - name: stop play
+      meta: end_play
+
+- name: extract bootable image
+  command: geteltorito -o {{ bios_update_temporary_directory }}/bios_update.img {{ bios_update_temporary_directory }}/{{ bios_update_url | basename }}
+  args:
+    creates: "{{ bios_update_temporary_directory }}/bios_update.img"
+
+- name: inspect flash drive
+  stat:
+    path: bios_update_flash_drive
+  register: bios_update_inspect_flash_drive
+
+- name: stop when the device does not exist
+  block:
+    - name: show message
+      debug:
+        msg:
+          - "The device {{ bios_update_flash_drive }} does not exist."
+
+    - name: stop play
+      meta: end_play
+      when:
+        - not bios_update_inspect_flash_drive.stat.exists
+
+- name: fail when the device is not a block device
+  fail:
+    msg:
+      - "The device {{ bios_update_flash_drive }} is not a block device"
+  when:
+    - bios_update_inspect_flash_drive.stat.isblk is not defined
+
+- name: write bootable image to flash drive when possible
+  command: dd if={{ bios_update_temporary_directory }}/bios_update.img of={{ bios_update_flash_drive }} bs=64K
+  args:
+    creates: "{{ bios_update_flash_drive }}1"
