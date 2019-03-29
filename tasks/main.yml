@@ -14,8 +14,6 @@
       get_url:
         url: "{{ bios_update_url }}"
         dest: "{{ bios_update_temporary_directory }}/{{ bios_update_url | basename }}"
-      when:
-        - bios_update_url != "UNKNOWN"
   rescue:
     - name: show error
       debug:
