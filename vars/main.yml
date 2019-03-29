@@ -3,6 +3,10 @@
 _bios_update_requirements:
   default:
     - geteltorito
+  Debian:
+    - genisoimage
+  Ubuntu:
+    - genisoimage
 
 bios_update_requirements: "{{ _bios_update_requirements[ansible_distribution ~ '-' ~ ansible_distribution_major_version] | default(_bios_update_requirements[ansible_distribution] | default(_bios_update_requirements['default'])) }}"
 
