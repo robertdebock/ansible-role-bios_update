@@ -8,7 +8,7 @@ _bios_update_requirements:
   Ubuntu:
     - genisoimage
 
-bios_update_requirements: "{{ _bios_update_requirements[ansible_distribution | default(_bios_update_requirements['default'])) }}"
+bios_update_requirements: "{{ _bios_update_requirements[ansible_distribution | default(_bios_update_requirements['default']) }}"
 
 # A mapping from computer model type to "bootable cd".
 _bios_update_url:
