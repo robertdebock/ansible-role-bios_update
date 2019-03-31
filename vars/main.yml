@@ -14,6 +14,12 @@ _bios_update_requirements:
 
 bios_update_requirements: "{{ _bios_update_requirements[ansible_distribution] | default(_bios_update_requirements['default']) }}"
 
+_bios_update_command:
+  default: geteltorito
+  CentOS: genisoimage
+
+bios_update_command: "{{ _bios_update_command[ansible_distribution] | default(_bios_update_command['default']) }}"
+
 # A mapping from computer model type to "bootable cd".
 _bios_update_url:
   default: UNKNOWN
