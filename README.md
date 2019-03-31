@@ -30,7 +30,6 @@ The machine you are running this on, may need to be prepared. Tests have been do
 
   roles:
     - robertdebock.bootstrap
-    - robertdebock.epel
 ```
 
 Also see a [full explanation and example](https://robertdebock.nl/how-to-use-these-roles.html) on how to use these roles.
@@ -70,7 +69,6 @@ The following roles can be installed to ensure all requirements are met, using `
 ```yaml
 ---
 - robertdebock.bootstrap
-- robertdebock.epel
 
 ```
 
@@ -93,7 +91,7 @@ This role has been tested against the following distributions and Ansible versio
 |alpine-edge*|no|no|no*|
 |alpine-latest|no|no|no*|
 |archlinux|no|no|no*|
-|centos-6|no|no|no*|
+|centos-6|yes|yes|yes*|
 |centos-latest|yes|yes|yes*|
 |debian-latest|yes|yes|yes*|
 |debian-stable|yes|yes|yes*|
