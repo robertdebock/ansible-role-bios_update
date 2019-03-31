@@ -3,6 +3,8 @@
 _bios_update_requirements:
   default:
     - geteltorito
+  CentOS:
+    - genisoimage
   Debian:
     - genisoimage
     - libperl4-corelibs-perl
