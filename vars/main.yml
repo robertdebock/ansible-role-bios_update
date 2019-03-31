@@ -5,8 +5,10 @@ _bios_update_requirements:
     - geteltorito
   Debian:
     - genisoimage
+    - libperl4-corelibs-perl
   Ubuntu:
     - genisoimage
+    - libperl4-corelibs-perl
 
 bios_update_requirements: "{{ _bios_update_requirements[ansible_distribution] | default(_bios_update_requirements['default']) }}"
 
