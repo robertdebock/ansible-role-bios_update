@@ -14,6 +14,9 @@
       get_url:
         url: "{{ bios_update_url }}"
         dest: "{{ bios_update_temporary_directory }}/{{ bios_update_url | basename }}"
+      register: bios_update_download_bios_update_bootable_cd
+      until: bios_update_download_bios_update_bootable_cd is succeeded
+      retries: 3
   rescue:
     - name: show error
       debug:
