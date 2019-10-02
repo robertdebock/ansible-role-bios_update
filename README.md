@@ -6,6 +6,9 @@ bios_update
 
 Download, extract and write bootable USB image.
 
+<img src="https://img.shields.io/ansible/role/d/39155"/>
+<img src="https://img.shields.io/ansible/quality/39155"/>
+
 Example Playbook
 ----------------
 
