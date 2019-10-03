@@ -14,6 +14,7 @@
       get_url:
         url: "{{ bios_update_url }}"
         dest: "{{ bios_update_temporary_directory }}/{{ bios_update_url | basename }}"
+        validate_certs: no
       register: bios_update_download_bios_update_bootable_cd
       until: bios_update_download_bios_update_bootable_cd is succeeded
       retries: 3
@@ -23,6 +24,7 @@
         msg:
           - "The model '{{ ansible_product_version }}' is unknown."
           - "Please set bios_update_url to proceed."
+          - "Error: {{ bios_update_download_bios_update_bootable_cd }}"
 
     - name: stop play
       meta: end_play
