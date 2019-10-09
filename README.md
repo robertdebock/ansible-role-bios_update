@@ -117,6 +117,16 @@ This role has been tested against the following distributions and Ansible versio
 
 A single star means the build may fail, it's marked as an experimental build.
 
+Exceptions
+----------
+
+Some variarations of the build matrix do not work. These are the variations and reasons why the build won't work:
+
+| variation                 | reason                 |
+|---------------------------|------------------------|
+| Alpine | required by: world[geteltorito] |
+| Archlinux | required by: world[geteltorito] |
+| Suse | No provider of geteltorito found |
 
 
 

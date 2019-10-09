@@ -1,0 +1,8 @@
+---
+exceptions:
+  - variation: Alpine
+    reason: "required by: world[geteltorito]"
+  - variation: Archlinux
+    reason: "required by: world[geteltorito]"
+  - variation: Suse
+    reason: "No provider of geteltorito found"
