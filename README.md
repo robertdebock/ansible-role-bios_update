@@ -101,16 +101,15 @@ This role has been tested on these [container images](https://hub.docker.com/):
 
 |container|allow_failures|
 |---------|--------------|
-|docker-alpine-openrc|yes|
-|docker-alpine-openrc|yes|
+|docker-debian-systemd|yes|
+|docker-debian-systemd|yes|
+|docker-debian-systemd|yes|
 |docker-centos-systemd|no|
+|docker-redhat-systemd|no|
 |docker-centos-systemd|no|
-|docker-debian-systemd|yes|
-|docker-debian-systemd|yes|
-|docker-debian-systemd|yes|
+|docker-redhat-systemd|no|
 |docker-fedora-systemd|yes|
 |docker-fedora-systemd|yes|
-|opensuse/|no|
 |docker-ubuntu-systemd|yes|
 |docker-ubuntu-systemd|yes|
 |docker-ubuntu-systemd|yes|
