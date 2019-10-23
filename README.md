@@ -104,10 +104,6 @@ This role has been tested on these [container images](https://hub.docker.com/):
 |docker-debian-systemd|stable|yes|
 |docker-debian-systemd|unstable|yes|
 |docker-debian-systemd|latest|no|
-|docker-centos-systemd|7|no|
-|docker-redhat-systemd|7|no|
-|docker-centos-systemd|latest|no|
-|docker-redhat-systemd|latest|no|
 |docker-fedora-systemd|latest|no|
 |docker-fedora-systemd|rawhide|yes|
 |docker-ubuntu-systemd|rolling|yes|
@@ -131,6 +127,7 @@ Some variarations of the build matrix do not work. These are the variations and 
 |---------------------------|------------------------|
 | Alpine | required by: world[geteltorito] |
 | Archlinux | required by: world[geteltorito] |
+| RedHat | No package genisoimage available |
 | Suse | No provider of geteltorito found |
 
 
