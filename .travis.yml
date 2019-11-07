@@ -11,13 +11,10 @@ env:
   global:
     namespace="robertdebock"
   matrix:
-    - image="debian" tag="stable"
     - image="debian" tag="unstable"
     - image="debian"
     - image="fedora"
     - image="fedora" tag="rawhide"
-    - image="ubuntu" tag="rolling"
-    - image="ubuntu" tag="devel"
     - image="ubuntu"
 
 matrix:
