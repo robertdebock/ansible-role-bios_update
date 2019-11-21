@@ -21,7 +21,6 @@ galaxy_info:
 
   galaxy_tags:
     - biosupdate
-    - alpine
     - archlinux
     - centos
     - debian
