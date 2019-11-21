@@ -23,7 +23,6 @@ galaxy_info:
     - biosupdate
     - archlinux
     - centos
-    - debian
     - el
     - fedora
     - opensuse
