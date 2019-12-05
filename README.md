@@ -115,7 +115,6 @@ Some variarations of the build matrix do not work. These are the variations and 
 | Suse | No provider of geteltorito found |
 
 
-
 Testing
 -------
 
