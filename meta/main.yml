@@ -23,6 +23,5 @@ galaxy_info:
     - biosupdate
     - archlinux
     - centos
-    - rhel
 
 dependencies: []
