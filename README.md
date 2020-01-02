@@ -4,6 +4,8 @@ bios_update
 <img src="https://docs.ansible.com/ansible-tower/3.2.4/html_ja/installandreference/_static/images/logo_invert.png" width="10%" height="10%" alt="Ansible logo" align="right"/>
 <a href="https://travis-ci.org/robertdebock/ansible-role-bios_update"> <img src="https://travis-ci.org/robertdebock/ansible-role-bios_update.svg?branch=master" alt="Build status"/></a> <img src="https://img.shields.io/ansible/role/d/39155"/> <img src="https://img.shields.io/ansible/quality/39155"/>
 
+<a href="https://github.com/robertdebock/ansible-role-bios_update/actions"><img src="https://github.com/robertdebock/ansible-role-bios_update/workflows/GitHub%20Action/badge.svg"/></a>
+
 Download, extract and write bootable USB image.
 
 Example Playbook
