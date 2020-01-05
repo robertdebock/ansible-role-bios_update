@@ -20,7 +20,11 @@ This example is taken from `molecule/resources/playbook.yml` and is tested on ea
   gather_facts: yes
 
   roles:
-    - robertdebock.bios_update
+    - role: robertdebock.bios_update
+      # The bios_update_url does not always need to be set, it's typically
+      # "discovered". For CI however, there is not right model, so this
+      # variable needs to be set manually.
+      bios_update_url: "https://download.lenovo.com/pccbbs/mobiles/r02uj70d.iso"
 ```
 
 The machine you are running this on, may need to be prepared, I use this playbook to ensure everything is in place to let the role work.
