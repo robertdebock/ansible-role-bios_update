@@ -1,5 +1,6 @@
 ---
 # vars file for bios_update
+
 _bios_update_requirements:
   default:
     - geteltorito
