@@ -7,9 +7,6 @@
   package:
     name: "{{ bios_update_requirements }}"
     state: present
-  register: bios_update_install_requirements
-  until: bios_update_install_requirements is succeeded
-  retries: 3
 
 - name: download bios update bootable cd
   block:
@@ -18,9 +15,6 @@
         url: "{{ bios_update_url }}"
         dest: "{{ bios_update_temporary_directory }}/{{ bios_update_url | basename }}"
         validate_certs: no
-      register: bios_update_download_bios_update_bootable_cd
-      until: bios_update_download_bios_update_bootable_cd is succeeded
-      retries: 3
   rescue:
     - name: show error
       debug:
