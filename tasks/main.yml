@@ -37,23 +37,11 @@
   register: bios_update_inspect_flash_drive
 
 - name: stop when the device does not exist
-  block:
-    - name: show message
-      debug:
-        msg:
-          - "The device {{ bios_update_flash_drive }} does not exist."
-
-    - name: stop play
-      meta: end_play
-  when:
-    - not bios_update_inspect_flash_drive.stat.exists
-
-- name: fail when the device is not a block device
-  fail:
-    msg:
-      - "The device {{ bios_update_flash_drive }} is not a block device"
-  when:
-    - bios_update_inspect_flash_drive.stat.isblk is not defined
+  assert:
+    that:
+      - not bios_update_inspect_flash_drive.stat.exists
+      - bios_update_inspect_flash_drive.stat.isblk is not defined
+    fail_msg: "The device {{ bios_update_flash_drive }} does not exist or is not a block device."
 
 - name: write bootable image to flash drive
   command: dd if={{ bios_update_temporary_directory }}/bios_update.img of={{ bios_update_flash_drive }} bs=64K
