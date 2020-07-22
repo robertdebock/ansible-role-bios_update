@@ -16,13 +16,12 @@
         dest: "{{ bios_update_temporary_directory }}/{{ bios_update_url | basename }}"
         validate_certs: no
   rescue:
-    - name: show error
+    - name: show problem
       debug:
         msg:
           - "The model '{{ ansible_product_version }}' is unknown."
           - "Please set bios_update_url to proceed."
           - "Error: {{ bios_update_download_bios_update_bootable_cd }}"
-
     - name: stop play
       meta: end_play
 
@@ -31,19 +30,9 @@
   args:
     creates: "{{ bios_update_temporary_directory }}/bios_update.img"
 
-- name: inspect flash drive
-  stat:
-    path: "{{ bios_update_flash_drive }}"
-  register: bios_update_inspect_flash_drive
-
-- name: stop when the device does not exist
-  assert:
-    that:
-      - not bios_update_inspect_flash_drive.stat.exists
-      - bios_update_inspect_flash_drive.stat.isblk is not defined
-    fail_msg: "The device {{ bios_update_flash_drive }} does not exist or is not a block device."
-
 - name: write bootable image to flash drive
   command: dd if={{ bios_update_temporary_directory }}/bios_update.img of={{ bios_update_flash_drive }} bs=64K
   args:
     creates: "{{ bios_update_flash_drive }}1"
+  when:
+    - not bios_update_ci_mode
