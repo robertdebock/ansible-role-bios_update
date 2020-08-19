@@ -4,15 +4,18 @@
     that:
       - bios_update_temporary_directory is defined
       - bios_update_temporary_directory | length > 0
+    quiet: yes
 
 - name: test if bios_update_url is set correctly
   assert:
     that:
       - bios_update_url is defined
       - bios_update_url | length > 0
+    quiet: yes
 
 - name: test if bios_update_flash_drive is set correctly
   assert:
     that:
       - bios_update_flash_drive is defined
       - bios_update_flash_drive | length > 0
+    quiet: yes
