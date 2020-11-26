@@ -1,4 +1,5 @@
 ---
+
 - name: test if bios_update_temporary_directory is set correctly
   assert:
     that:
