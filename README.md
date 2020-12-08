@@ -2,9 +2,9 @@
 
 Download, extract and write bootable USB image.
 
-|Travis|GitHub|Quality|Downloads|Version|
-|------|------|-------|---------|-------|
-|[![travis](https://travis-ci.com/robertdebock/ansible-role-bios_update.svg?branch=master)](https://travis-ci.com/robertdebock/ansible-role-bios_update)|[![github](https://github.com/robertdebock/ansible-role-bios_update/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-bios_update/actions)|[![quality](https://img.shields.io/ansible/quality/39155)](https://galaxy.ansible.com/robertdebock/bios_update)|[![downloads](https://img.shields.io/ansible/role/d/39155)](https://galaxy.ansible.com/robertdebock/bios_update)|[![Version](https://img.shields.io/github/release/robertdebock/ansible-role-bios_update.svg)](https://github.com/robertdebock/ansible-role-bios_update/releases/)|
+|Travis|GitHub|GitLab|Quality|Downloads|Version|
+|------|------|------|-------|---------|-------|
+|[![travis](https://travis-ci.com/robertdebock/ansible-role-bios_update.svg?branch=master)](https://travis-ci.com/robertdebock/ansible-role-bios_update)|[![github](https://github.com/robertdebock/ansible-role-bios_update/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-bios_update/actions)|[![gitlab](https://gitlab.com/robertdebock/ansible-role-bios_update/badges/master/pipeline.svg)](https://gitlab.com/robertdebock/ansible-role-bios_update)|[![quality](https://img.shields.io/ansible/quality/39155)](https://galaxy.ansible.com/robertdebock/bios_update)|[![downloads](https://img.shields.io/ansible/role/d/39155)](https://galaxy.ansible.com/robertdebock/bios_update)|[![Version](https://img.shields.io/github/release/robertdebock/ansible-role-bios_update.svg)](https://github.com/robertdebock/ansible-role-bios_update/releases/)|
 
 ## [Example Playbook](#example-playbook)
 
