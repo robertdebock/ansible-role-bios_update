@@ -28,7 +28,7 @@
       meta: end_play
 
 - name: extract bootable image
-  command: "{{ bios_update_full_command }}"
+  command: "{{ bios_update_command }}"
   args:
     creates: "{{ bios_update_temporary_directory }}/bios_update.img"
 

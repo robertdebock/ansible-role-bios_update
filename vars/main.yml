@@ -16,9 +16,7 @@ _bios_update_command:
   default: geteltorito
   RedHat: genisoimage
 
-bios_update_command: "{{ _bios_update_command[ansible_os_family] | default(_bios_update_command['default']) }}"
-
-bios_update_full_command: "{{ bios_update_command }} -o {{ bios_update_temporary_directory }}/bios_update.img {{ bios_update_temporary_directory }}/{{ bios_update_url | basename }}"
+bios_update_command: "{{ _bios_update_command[ansible_os_family] | default(_bios_update_command['default']) }} -o {{ bios_update_temporary_directory }}/bios_update.img {{ bios_update_temporary_directory }}/{{ bios_update_url | basename }}"
 
 # A mapping from computer model type to "bootable cd".
 _bios_update_url:
