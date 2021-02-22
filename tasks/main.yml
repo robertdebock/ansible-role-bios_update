@@ -29,12 +29,12 @@
       meta: end_play
 
 - name: extract bootable image
-  command: "{{ bios_update_command }}"
+  ansible.builtin.command: "{{ bios_update_command }}"
   args:
     creates: "{{ bios_update_temporary_directory }}/bios_update.img"
 
 - name: write bootable image to flash drive
-  command: dd if={{ bios_update_temporary_directory }}/bios_update.img of={{ bios_update_flash_drive }} bs=64K
+  ansible.builtin.command: dd if={{ bios_update_temporary_directory }}/bios_update.img of={{ bios_update_flash_drive }} bs=64K
   args:
     creates: "{{ bios_update_flash_drive }}1"
   when:
