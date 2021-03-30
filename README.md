@@ -22,8 +22,6 @@ This example is taken from `molecule/resources/converge.yml` and is tested on ea
       # "discovered". For CI however, there is not right model, so this
       # variable needs to be set manually.
       bios_update_url: "https://download.lenovo.com/pccbbs/mobiles/r02uj70d.iso"
-      # Can't emulate a block-device in CI.
-      bios_update_ci_mode: yes
 ```
 
 The machine needs to be prepared in CI this is done using `molecule/resources/prepare.yml`:
