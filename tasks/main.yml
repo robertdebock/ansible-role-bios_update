@@ -36,6 +36,7 @@
 - name: read shit
   command:
     cmd: printenv
+  changed_when: no
   register: shit
 
 - name: show shit
