@@ -33,27 +33,9 @@
     cmd: "{{ bios_update_command }}"
     creates: "{{ bios_update_temporary_directory }}/bios_update.img"
 
-- name: read shit
-  command:
-    cmd: printenv
-  changed_when: no
-  register: shit
-
-- name: show shit
-  debug:
-    msg: "{{ shit.stdout }}"
-
-- name: show ci
-  debug:
-    msg: "GITHUB_ACTIONS: {{ ci }}"
-  vars:
-    ci: "{{ lookup('env', 'GITHUB_ACTIONS') }}"
-
 - name: write bootable image to flash drive
   ansible.builtin.command:
     cmd: dd if={{ bios_update_temporary_directory }}/bios_update.img of={{ bios_update_flash_drive }} bs=64K
     creates: "{{ bios_update_flash_drive }}1"
   when:
-    - not ci | bool
-  vars:
-    ci: "{{ lookup('env', 'CI') }}"
+    - bios_update_write
