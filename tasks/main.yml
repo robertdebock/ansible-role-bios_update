@@ -45,9 +45,9 @@
 
 - name: show ci
   debug:
-    msg: "ci: {{ ci }}"
+    msg: "GITHUB_ACTIONS: {{ ci }}"
   vars:
-    ci: "{{ lookup('env', 'CI') }}"
+    ci: "{{ lookup('env', 'GITHUB_ACTIONS') }}"
 
 - name: write bootable image to flash drive
   ansible.builtin.command:
