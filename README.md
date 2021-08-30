@@ -22,6 +22,9 @@ This example is taken from `molecule/default/converge.yml` and is tested on each
       # "discovered". For CI however, there is not right model, so this
       # variable needs to be set manually.
       bios_update_url: "https://download.lenovo.com/pccbbs/mobiles/r02uj70d.iso"
+      # In CI, it's hard to write to a removable media, this parameter basically
+      # disables writing.
+      bios_update_write: no
 ```
 
 The machine needs to be prepared in CI this is done using `molecule/default/prepare.yml`:
@@ -59,6 +62,9 @@ bios_update_temporary_directory: /tmp
 # WARNING: THIS DEVICE WILL BE OVERWRITTEN.
 #
 bios_update_flash_drive: "/dev/sdCHANGEME"
+
+# By default this role should write to removable media. Can be disabled in CI.
+bios_update_write: yes
 ```
 
 ## [Requirements](#requirements)
