@@ -19,7 +19,6 @@
         dest: "{{ bios_update_temporary_directory }}/{{ bios_update_url | basename }}"
         validate_certs: no
   rescue:
-
     - name: show problem
       ansible.builtin.debug:
         msg:
