@@ -9,6 +9,7 @@ Download, extract and write bootable USB image.
 ## [Example Playbook](#example-playbook)
 
 This example is taken from `molecule/default/converge.yml` and is tested on each push, pull request and release.
+
 ```yaml
 ---
 - name: converge
@@ -28,6 +29,7 @@ This example is taken from `molecule/default/converge.yml` and is tested on each
 ```
 
 The machine needs to be prepared. In CI this is done using `molecule/default/prepare.yml`:
+
 ```yaml
 ---
 - name: prepare
@@ -44,6 +46,7 @@ Also see a [full explanation and example](https://robertdebock.nl/how-to-use-the
 ## [Role Variables](#role-variables)
 
 The default values for the variables are set in `defaults/main.yml`:
+
 ```yaml
 ---
 # defaults file for bios_update
@@ -77,7 +80,7 @@ The following roles are used to prepare a system. You can prepare your system in
 
 | Requirement | GitHub | GitLab |
 |-------------|--------|--------|
-|[robertdebock.bootstrap](https://galaxy.ansible.com/robertdebock/bootstrap)|[![Build Status GitHub](https://github.com/robertdebock/ansible-role-bootstrap/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-bootstrap/actions)|[![Build Status GitLab ](https://gitlab.com/robertdebock/ansible-role-bootstrap/badges/master/pipeline.svg)](https://gitlab.com/robertdebock/ansible-role-bootstrap)|
+|[robertdebock.bootstrap](https://galaxy.ansible.com/robertdebock/bootstrap)|[![Build Status GitHub](https://github.com/robertdebock/ansible-role-bootstrap/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-bootstrap/actions)|[![Build Status GitLab](https://gitlab.com/robertdebock/ansible-role-bootstrap/badges/master/pipeline.svg)](https://gitlab.com/robertdebock/ansible-role-bootstrap)|
 
 ## [Context](#context)
 
@@ -103,7 +106,6 @@ The minimum version of Ansible required is 2.10, tests have been done to:
 - The previous version.
 - The current version.
 - The development version.
-
 
 If you find issues, please register them in [GitHub](https://github.com/robertdebock/ansible-role-bios_update/issues)
 
