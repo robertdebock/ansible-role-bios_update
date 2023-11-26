@@ -1,4 +1,4 @@
-# Ansible role [bios_update](#bios_update)
+# [Ansible role bios_update](#bios_update)
 
 Download, extract and write bootable USB image.
 
