@@ -1,5 +1,7 @@
 # [Ansible role bios_update](#bios_update)
 
+> THIS ROLE HAS BEEN ARCHIVED AS OF DEC 2023.
+
 Download, extract and write bootable USB image.
 
 |GitHub|GitLab|Downloads|Version|
